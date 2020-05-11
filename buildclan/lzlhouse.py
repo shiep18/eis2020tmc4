@@ -1,7 +1,7 @@
-#!/usr/bin/python3
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 #Autor:ZLL
+#修改了
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 mc = minecraft.Minecraft.create('47.100.46.95',4784)
@@ -16,11 +16,11 @@ class House():
         self.w=int(w)
         self.h=int(h)
 
-    def SetHouse(self):#(x,y,z).............
+    def SetHouse(self):#(x,y,z)表示屋子的第一个方块所在地
         for X in range(0,self.l):
             for Z in range(0,self.w):
-                mc.setBlock(self.x + X, self.y, self.z + Z, p)# ..
-                mc.setBlock(self.x + X, self.y + self.h-1, self.z + Z, p)#..
+                mc.setBlock(self.x + X, self.y, self.z + Z, p)# 底部
+                mc.setBlock(self.x + X, self.y + self.h-1, self.z + Z, p)#屋顶
         for Y in range(1, self.h-1):
             for X in range(0,self.l):
                 mc.setBlock(self.x + X, self.y + Y, self.z,p)
@@ -66,7 +66,6 @@ class House():
 if __name__=='__main__':
     house1=House('BigHouse1',-174,-39,-54,10,10,10)
     house1.SetHouse()
-
 
 
 
